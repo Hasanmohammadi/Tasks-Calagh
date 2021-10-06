@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useStopwatch } from "react-timer-hook";
-import { TaskContext } from "../context/context";
-import { TasksType } from "../types";
+import { TaskContext } from "../../context/context";
+import { TasksType } from "../../types";
 interface TimerType {
   id: string;
   isStart: boolean;

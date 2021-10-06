@@ -1,8 +1,8 @@
 import { useFormik } from "formik";
 import { useContext } from "react";
-import { TasksType } from "../types";
+import { TasksType } from "../../types";
 import style from "./tasks.module.css";
-import { TaskContext } from "./../context/context";
+import { TaskContext } from "../../context/context";
 interface EditTaskType {
   initialValues: TasksType;
   setEdit: any;

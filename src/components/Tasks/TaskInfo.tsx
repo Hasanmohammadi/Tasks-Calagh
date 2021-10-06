@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { TaskContext } from "../context/context";
-import { TasksType } from "../types";
+import { TaskContext } from "../../context/context";
+import { TasksType } from "../../types";
 import { EditTask } from "./EditTask";
 import style from "./tasks.module.css";
 import { Timer } from "./Timer";

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { TaskContext } from "../context/context";
-import { TasksType } from "../types";
+import { TaskContext } from "../../context/context";
+import { TasksType } from "../../types";
 import { TaskInfo } from "./TaskInfo";
 import style from "./tasks.module.css";
 
