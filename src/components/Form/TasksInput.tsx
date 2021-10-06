@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import { useContext } from "react";
 import { TaskContext } from "../../context/context";
-import style from "./tasks.module.css";
+import style from "../Style/tasks.module.css";
 import { TasksType } from "../../types";
 import { v4 as uuidv4 } from "uuid";
 import * as yup from "yup";
