@@ -9,11 +9,10 @@ const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
   project: yup.string().required("Project is required"),
   description: yup.string().required("Description is required"),
-  startedTime: yup.string().required("Started Time is required"),
-  finishedTime: yup.string().required("Finished Time is required"),
 });
 
 export const TasksInput = () => {
+  const time = new Date();
   const context = useContext(TaskContext);
   const formik = useFormik({
     initialValues: {
@@ -26,12 +25,18 @@ export const TasksInput = () => {
       startedTime: "",
       finishedTime: "",
       taskStarted: 0,
+      taskDone: "",
     },
     validationSchema: schema,
     onSubmit: (values: TasksType) => {
       context.setTasks((pre: TasksType[]) => [
         ...pre,
-        { ...values, id: uuidv4(), isStart: false },
+        {
+          ...values,
+          id: uuidv4(),
+          isStart: values.startedTime ? true : false,
+          taskStarted: values.startedTime ? time.getTime() : 0,
+        },
       ]);
       formik.resetForm();
     },

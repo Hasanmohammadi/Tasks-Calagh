@@ -8,4 +8,5 @@ export interface TasksType {
   startedTime: string;
   finishedTime: string;
   taskStarted: number;
+  taskDone: string;
 }

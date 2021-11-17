@@ -13,12 +13,17 @@ export const EditTask: React.FC<EditTaskType> = ({
   setEdit,
 }) => {
   const context = useContext(TaskContext);
+  const time = new Date();
   const formik = useFormik({
     initialValues: initialValues,
     onSubmit: (values: TasksType) => {
       const array = [...context.tasks];
       const taskIndex = array.findIndex((task) => task.id === initialValues.id);
-      array[taskIndex] = values;
+      array[taskIndex] = {
+        ...values,
+        isStart: values.startedTime ? true : false,
+        taskStarted: values.startedTime ? time.getTime() : 0,
+      };
       context.setTasks(array);
       setEdit(false);
     },
